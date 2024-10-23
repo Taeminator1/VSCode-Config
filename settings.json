@@ -1,3 +1,5 @@
 {
-    "window.autoDetectColorScheme": true
+    "window.autoDetectColorScheme": true,
+    "plantuml.previewAutoUpdate": false,
+    "plantuml.exportFormat": "png"
 }

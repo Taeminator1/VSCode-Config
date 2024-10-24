@@ -12,9 +12,9 @@
 	"Example for PlantUML": {
 		"prefix": "puml>example",
 		"body": [
-			"${1:first placeholder}",
-			"${2:second placeholder}",
-			"${0:last placeholder}"
+			"${1:first_placeholder}",
+			"${2:second_placeholder}",
+			"${0:last_placeholder}"
 		],
 		"description": ""
 	},
@@ -23,7 +23,7 @@
 	"Make a PlantUML initial block": {
 		"prefix": "puml>start",
 		"body": [
-			"@startuml ${1:diagram name}",
+			"@startuml ${1:diagram_name}",
 			"${2:body}",
 			"@enduml"
 		],
@@ -35,9 +35,9 @@
 		"prefix": "puml>object",
 		"body": [
 			"skinparam classAttributeIconSize 0",
-			"class ${1:object name} {",
-			"${2:property name}",
-			"${3:method name}()",
+			"class ${1:object_name} {",
+			"${2:property_name}",
+			"${3:method_name}()",
 			"}",
 			"hide $1 circle"
 		],

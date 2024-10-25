@@ -31,15 +31,18 @@
 	},
 
 	// ** Class Diagram **
-	"Make an Object": {
-		"prefix": "puml>object",
+	"Make a Class": {
+		"prefix": "puml>class",
 		"body": [
-			"skinparam classAttributeIconSize 0",
-			"class ${1:object_name} {",
+			"class ${1:class_name} {",
 			"${2:property_name}",
 			"${3:method_name}()",
 			"}",
-			"hide $1 circle"
+			"${4:hide $1 circle}",
+			"${5:hide $1 members}",
+			"${6:hide $1 methods}",
+			"",
+			"${0:skinparam classAttributeIconSize 0}",
 		],
 		"description": ""
 	},

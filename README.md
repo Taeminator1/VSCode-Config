@@ -25,7 +25,7 @@ VSCode의 설정을 위해 해당 파일 구조의 적절한 파일들을 확인
 1. Command Palette... or ⇧⌘P
 2. Open User Settings (JSON)
 3. Reveal in Finder를 통해 settings.json 찾기
-![alt text](image-1.png)
+![alt text](image.png)
 4. settings.json을 기준으로 상위 첫 번째 폴더가 User
 
 ### 현재 VSCode의 Code 위치

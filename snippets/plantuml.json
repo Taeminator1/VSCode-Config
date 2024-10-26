@@ -35,7 +35,7 @@
 	// prefix: "puml>class>{something}"
 	// **** Class
 	"Make a class": {
-		"prefix": "puml>class>class",
+		"prefix": "puml>class>new",
 		"body": [
 			"class ${1:class_name} {",
 			"${2:property_name}",
@@ -121,6 +121,17 @@
 
 	// ** Object Diagram
 	// ** Sequence Diagram
+	"Make a simple sequence diagram": {
+		"prefix": "puml>sequence>new",
+		"body": [
+			"participant ${1:participant1}",
+			"participant ${2:participant2}",
+			"",
+			"$1 -> $2: ${3:requset}",
+			"$2 --> $1: ${4:response}",
+		],
+		"description": ""
+	},
 	// ** Collaboration Diagram
 	// ** State Diagram
 

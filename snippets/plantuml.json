@@ -20,6 +20,7 @@
 	},
 
 	// ** General
+	// prefix: "puml>{something}"
 	"Make a PlantUML initial block": {
 		"prefix": "puml>start",
 		"body": [
@@ -31,8 +32,10 @@
 	},
 
 	// ** Class Diagram
-	"Make a Class": {
-		"prefix": "puml>class",
+	// prefix: "puml>class>{something}"
+	// **** Class
+	"Make a class": {
+		"prefix": "puml>class>class",
 		"body": [
 			"class ${1:class_name} {",
 			"${2:property_name}",
@@ -46,6 +49,75 @@
 		],
 		"description": ""
 	},
+	// **** Interface
+	"Make an Interface": {
+		"prefix": "puml>class>interface",
+		"body": [
+			"interface ${1:interface_name} <<interface>> {",
+			"${2:property_name}",
+			"${3:method_name}()",
+			"}",
+			"${4:hide $1 circle}",
+			"${5:hide $1 members}",
+			"${6:hide $1 methods}",
+			"",
+			"${0:skinparam classAttributeIconSize 0}",
+		],
+		"description": ""
+	},
+	// *** Relations
+	// **** Association
+	"Connect classes for association horizontally": {
+		"prefix": "puml>class>asso>hor",
+		"body": [
+			"${1:client_name} ${4:\"n\"} -> ${5:\"m\"} ${2:target_name}: \"${3:behavior}\"",
+			"${0}"
+		],
+		"description": "Adjust length of line of arrow with space in behavior"
+	},
+	"Connect classes for association vertically": {
+		"prefix": "puml>class>asso>ver",
+		"body": [
+			"${1:client_name} ${4:\"n\"} --> ${5:\"m\"} ${2:target_name}",
+			"${0}"
+		],
+		"description": "Adjust length of line of arrow the number of dashs"
+	},
+	// **** Generalization
+	"Inheritance class horizontally": {
+		"prefix": "puml>class>gen>hor",
+		"body": [
+			"${1:parent_name} <|- ${2:child_name}: \"${3:spaces}\"",
+			"${0}"
+		],
+		"description": "Adjust length of line of arrow with space in spaces"
+	},
+	"Inheritance class vertically": {
+		"prefix": "puml>class>gen>ver",
+		"body": [
+			"${1:parent_name} <|-- ${2:child_name}",
+			"${0}"
+		],
+		"description": "Adjust length of line of arrow the number of dashs"
+	},
+	// **** Realization
+	"Imprement concrete class horizontally": {
+		"prefix": "puml>class>real>hor",
+		"body": [
+			"${1:interface_name} <|. ${2:concrete_type_name}: \"${3:spaces}\"",
+			"${0}"
+		],
+		"description": "Adjust length of line of arrow with space in spaces"
+	},
+	"Imprement class vertically": {
+		"prefix": "puml>class>real>ver",
+		"body": [
+			"${1:interface_name} <|.. ${2:concrete_type_name}",
+			"${0}"
+		],
+		"description": "Adjust length of line of arrow the number of dots"
+	},
+
 
 	// ** Object Diagram
 	// ** Sequence Diagram

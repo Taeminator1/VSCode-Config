@@ -4,11 +4,11 @@
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
 	// same ids are connected.
 
-	// ** references **
+	// ** references
 	// https://code.visualstudio.com/api/language-extensions/snippet-guide
 	// https://plantuml.com/en/
 
-	// ** Example **
+	// ** Example
 	"Example for PlantUML": {
 		"prefix": "puml>example",
 		"body": [
@@ -19,7 +19,7 @@
 		"description": ""
 	},
 
-	// ** General **
+	// ** General
 	"Make a PlantUML initial block": {
 		"prefix": "puml>start",
 		"body": [
@@ -30,7 +30,7 @@
 		"description": "Make start end end mark for plantUML"
 	},
 
-	// ** Class Diagram **
+	// ** Class Diagram
 	"Make a Class": {
 		"prefix": "puml>class",
 		"body": [
@@ -47,7 +47,12 @@
 		"description": ""
 	},
 
-	// ** Sequence Diagram **
+	// ** Object Diagram
+	// ** Sequence Diagram
+	// ** Collaboration Diagram
+	// ** State Diagram
+
+
 	
 }
 

@@ -1,4 +1,5 @@
 {
+    "files.autoSave": "afterDelay",
     "window.autoDetectColorScheme": true,
     "plantuml.previewAutoUpdate": true,
     "plantuml.exportFormat": "png"

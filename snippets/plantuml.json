@@ -25,7 +25,7 @@
 		"prefix": "puml>start",
 		"body": [
 			"@startuml ${1:diagram_name}",
-			"${0:body}",
+			"${0}",
 			"@enduml"
 		],
 		"description": "Make start end end mark for plantUML"
@@ -37,7 +37,7 @@
 		"prefix": "puml>class>hide>icon",
 		"body": [
 			"skinparam classAttributeIconSize 0",
-			"$0",
+			"${0}"
 		],
 		"description": ""
 	},
@@ -45,17 +45,27 @@
 		"prefix": "puml>class>group>arr",
 		"body": [
 			"skinparam groupInheritance ${1:n}",
-			"$0",
+			"${0}"
 		],
 		"description": "1: no grouping\n2: grouping from 2\n3: grouping from 3\n4: grouping from 4"
 	},
-	"Hide elements of class": {
+	"Hide elements of the class": {
 		"prefix": "puml>class>hide",
 		"body": [
 			"hide ${1:class_name} circle",
 			"hide $1 members",
 			"hide $1 methods",
-			"$0",
+			"${0}"
+		],
+		"description": "If you show specific elements, replace hide as show"
+	},
+	"Hide elements of every class": {
+		"prefix": "puml>class>hide>all",
+		"body": [
+			"hide circle",
+			"hide members",
+			"hide methods",
+			"${0}"
 		],
 		"description": "If you show specific elements, replace hide as show"
 	},
@@ -67,11 +77,7 @@
 			"${2:property_name}",
 			"${3:method_name}()",
 			"}",
-			"${4:hide $1 circle}",
-			"${5:hide $1 members}",
-			"${6:hide $1 methods}",
-			"",
-			"$0"
+			"${0}"
 		],
 		"description": ""
 	},
@@ -83,13 +89,20 @@
 			"${2:property_name}",
 			"${3:method_name}()",
 			"}",
-			"${4:hide $1 circle}",
-			"${5:hide $1 members}",
-			"${6:hide $1 methods}",
-			"",
-			"$0"
+			"${0}"
 		],
 		"description": ""
+	},
+	"Group some classes": {
+		"prefix": "puml>class>group",
+		"body": [
+			"together {",
+			"class ${1:class1}",
+			"class ${2:class2}",
+			"${0}",
+			"}"
+		],
+		"description": "The layout engine will try to group the classes"
 	},
 	// *** Relations
 	// **** Association
@@ -97,7 +110,7 @@
 		"prefix": "puml>class>ass",
 		"body": [
 			"${1:caller} -> ${4:\"n\"} ${2:callee}: \"${3:behavior}\"",
-			"$0"
+			"${0}"
 		],
 		"description": "Adjust length of line of arrow with space in behavior"
 	},
@@ -106,7 +119,7 @@
 		"prefix": "puml>class>gen",
 		"body": [
 			"${1:parent} <|-- ${2:child}",
-			"$0"
+			"${0}"
 		],
 		"description": "Adjust length of line of arrow the number of dashs"
 	},
@@ -115,7 +128,7 @@
 		"prefix": "puml>class>rea",
 		"body": [
 			"${1:interface_name} <|.. ${2:concrete_type_name}",
-			"$0"
+			"${0}"
 		],
 		"description": "Adjust length of line of arrow the number of dots"
 	},

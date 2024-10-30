@@ -42,7 +42,7 @@
 		"description": ""
 	},
 	"Group arrowhead of inheritances": {
-		"prefix": "puml>class>group>arr",
+		"prefix": "puml>class>group>arrowhead",
 		"body": [
 			"skinparam groupInheritance ${1:n}",
 			"${0}"
@@ -93,7 +93,7 @@
 		],
 		"description": ""
 	},
-	"Group some classes": {
+	"Group some classes together": {
 		"prefix": "puml>class>group",
 		"body": [
 			"together {",
@@ -103,6 +103,28 @@
 			"}"
 		],
 		"description": "The layout engine will try to group the classes"
+	},
+	"Group some classes in a rectangle": {
+		"prefix": "puml>class>group>rectangle",
+		"body": [
+			"rectangle ${1:rectangle_name} {",
+			"class ${2:class1}",
+			"class ${3:class2}",
+			"${0}",
+			"}"
+		],
+		"description": "Put some classes in a rectangle"
+	},
+	"Group some classes in a package": {
+		"prefix": "puml>class>group>package",
+		"body": [
+			"package ${1:package_name} {",
+			"class ${2:class1}",
+			"class ${3:class2}",
+			"${0}",
+			"}"
+		],
+		"description": "Put some classes in a package"
 	},
 	// *** Relations
 	// **** Association

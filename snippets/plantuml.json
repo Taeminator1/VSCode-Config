@@ -59,6 +59,14 @@
 		],
 		"description": "If you show specific elements, replace hide as show"
 	},
+	"Set classes' minmum width": {
+		"prefix": "puml>class>width",
+		"body": [
+			"skinparam MinClassWidth ${1:width}",
+			"${0}"
+		],
+		"description": ""
+	},
 	"Hide elements of every class": {
 		"prefix": "puml>class>hide>all",
 		"body": [
@@ -73,9 +81,9 @@
 	"Make a class": {
 		"prefix": "puml>class>new",
 		"body": [
-			"class ${1:class_name} {",
-			"${2:property_name}",
-			"${3:method_name}()",
+			"class ${1:class_reference_name} as ${2:\"class_alias_name\"}{",
+			"${3:property_name}",
+			"${4:method_name}()",
 			"}",
 			"${0}"
 		],

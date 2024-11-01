@@ -8,7 +8,7 @@
 	// https://code.visualstudio.com/api/language-extensions/snippet-guide
 	// https://plantuml.com/en/
 
-	// ** Example
+	// ## Example
 	"Example for PlantUML": {
 		"prefix": "puml>example",
 		"body": [
@@ -16,10 +16,10 @@
 			"${2:second_placeholder}",
 			"${0:last_placeholder}"
 		],
-		"description": ""
+		"description": "description"
 	},
 
-	// ** General
+	// ### General
 	// prefix: "puml>{something}"
 	"Make a PlantUML initial block": {
 		"prefix": "puml>start",
@@ -31,26 +31,26 @@
 		"description": "Make start end end mark for plantUML"
 	},
 
-	// ** Class Diagram
+	// ### Class Diagram
 	// prefix: "puml>class>{something}"
-	"Hide attribute icons": {
-		"prefix": "puml>class>hide>icon",
-		"body": [
-			"skinparam classAttributeIconSize 0",
-			"${0}"
-		],
-		"description": ""
-	},
 	"Group arrowhead of inheritances": {
-		"prefix": "puml>class>group>arrowhead",
+		"prefix": "puml>class>attr>arrowhead",
 		"body": [
 			"skinparam groupInheritance ${1:n}",
 			"${0}"
 		],
 		"description": "1: no grouping\n2: grouping from 2\n3: grouping from 3\n4: grouping from 4"
 	},
+	"Hide attribute icons": {
+		"prefix": "puml>class>attr>icon>hide",
+		"body": [
+			"skinparam classAttributeIconSize 0",
+			"${0}"
+		],
+		"description": ""
+	},
 	"Hide elements of the class": {
-		"prefix": "puml>class>hide",
+		"prefix": "puml>class>attr>elem>hide",
 		"body": [
 			"hide ${1:class_name} circle",
 			"hide $1 members",
@@ -60,12 +60,11 @@
 		"description": "If you show specific elements, replace hide as show"
 	},
 	"Set classes' minmum width": {
-		"prefix": "puml>class>width",
+		"prefix": "puml>class>attr>width",
 		"body": [
 			"skinparam MinClassWidth ${1:width}",
 			"${0}"
-		],
-		"description": ""
+		]
 	},
 	"Hide elements of every class": {
 		"prefix": "puml>class>hide>all",
@@ -77,29 +76,26 @@
 		],
 		"description": "If you show specific elements, replace hide as show"
 	},
-	// **** Class
+	// #### Types
 	"Make a class": {
-		"prefix": "puml>class>new",
+		"prefix": "puml>class>class",
 		"body": [
 			"class ${1:class_reference_name} as ${2:\"class_alias_name\"}{",
 			"${3:property_name}",
 			"${4:method_name}()",
 			"}",
 			"${0}"
-		],
-		"description": ""
+		]
 	},
-	// **** Interface
 	"Make an Interface": {
-		"prefix": "puml>class>interface",
+		"prefix": "puml>class>inter",
 		"body": [
 			"interface ${1:interface_name} <<interface>> {",
 			"${2:property_name}",
 			"${3:method_name}()",
 			"}",
 			"${0}"
-		],
-		"description": ""
+		]
 	},
 	"Group some classes together": {
 		"prefix": "puml>class>group",
@@ -112,50 +108,46 @@
 		],
 		"description": "The layout engine will try to group the classes"
 	},
+	"Group some classes in a package": {
+		"prefix": "puml>class>package",
+		"body": [
+			"package ${1:package_name} <<${2:Folder}>> {",
+			"class ${3:class1}",
+			"class ${4:class2}",
+			"${0}",
+			"}"
+		],
+		"description": "- Node\n- Rectangle\n- Folder\n- Frame\n- Cloud\n- Database"
+	},
 	"Group some classes in a rectangle": {
-		"prefix": "puml>class>group>rectangle",
+		"prefix": "puml>class>package>rectangle",
 		"body": [
 			"rectangle ${1:rectangle_name} {",
 			"class ${2:class1}",
 			"class ${3:class2}",
 			"${0}",
 			"}"
-		],
-		"description": "Put some classes in a rectangle"
+		]
 	},
-	"Group some classes in a package": {
-		"prefix": "puml>class>group>package",
-		"body": [
-			"package ${1:package_name} {",
-			"class ${2:class1}",
-			"class ${3:class2}",
-			"${0}",
-			"}"
-		],
-		"description": "Put some classes in a package"
-	},
-	// *** Relations
-	// **** Association
-	"Connect classes for association": {
-		"prefix": "puml>class>ass",
+	// #### Relations
+	"Connect classes for association to express association": {
+		"prefix": "puml>class>asso",
 		"body": [
 			"${1:caller} -> ${4:\"n\"} ${2:callee}: \"${3:behavior}\"",
 			"${0}"
 		],
 		"description": "Adjust length of line of arrow with space in behavior"
 	},
-	// **** Generalization
-	"Inheritance class": {
-		"prefix": "puml>class>gen",
+	"Inheritance class to express generalization": {
+		"prefix": "puml>class>gene",
 		"body": [
 			"${1:parent} <|-- ${2:child}",
 			"${0}"
 		],
 		"description": "Adjust length of line of arrow the number of dashs"
 	},
-	// **** Realization
-	"Imprement class": {
-		"prefix": "puml>class>rea",
+	"Imprement class to express realization": {
+		"prefix": "puml>class>real",
 		"body": [
 			"${1:interface_name} <|.. ${2:concrete_type_name}",
 			"${0}"

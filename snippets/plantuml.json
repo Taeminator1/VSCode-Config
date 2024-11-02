@@ -39,7 +39,7 @@
 			"skinparam groupInheritance ${1:n}",
 			"${0}"
 		],
-		"description": "1: no grouping\n2: grouping from 2\n3: grouping from 3\n4: grouping from 4"
+		"description": "for ${1}, 1: no grouping, 2: grouping from 2, 3: grouping from 3, 4: grouping from 4"
 	},
 	"Hide attribute icons": {
 		"prefix": "puml>class>attr>icon>hide",
@@ -57,7 +57,7 @@
 			"hide $1 methods",
 			"${0}"
 		],
-		"description": "If you show specific elements, replace hide as show"
+		"description": "If you show specific elements, replace hide as show.\nIf you want to hide every element of all classes, make class_name nothing."
 	},
 	"Set classes' minmum width": {
 		"prefix": "puml>class>attr>width",
@@ -66,21 +66,11 @@
 			"${0}"
 		]
 	},
-	"Hide elements of every class": {
-		"prefix": "puml>class>hide>all",
-		"body": [
-			"hide circle",
-			"hide members",
-			"hide methods",
-			"${0}"
-		],
-		"description": "If you show specific elements, replace hide as show"
-	},
 	// #### Types
 	"Make a class": {
 		"prefix": "puml>class>class",
 		"body": [
-			"class ${1:class_reference_name} as ${2:\"class_alias_name\"}{",
+			"class ${1:class_reference_name} as ${2:\"class_alias_name\"} {",
 			"${3:property_name}",
 			"${4:method_name}()",
 			"}",
@@ -108,7 +98,7 @@
 		],
 		"description": "The layout engine will try to group the classes"
 	},
-	"Group some classes in a package": {
+	"Group some classes in any kind of package": {
 		"prefix": "puml>class>package",
 		"body": [
 			"package ${1:package_name} <<${2:Folder}>> {",
@@ -117,7 +107,7 @@
 			"${0}",
 			"}"
 		],
-		"description": "- Node\n- Rectangle\n- Folder\n- Frame\n- Cloud\n- Database"
+		"description": "for ${2}, Node, Rectangle, Folder, Frame, Cloud or Database"
 	},
 	"Group some classes in a rectangle": {
 		"prefix": "puml>class>package>rectangle",
@@ -155,24 +145,35 @@
 		"description": "Adjust length of line of arrow the number of dots"
 	},
 
-
-	// ** Object Diagram
-	// ** Sequence Diagram
-	"Make a simple sequence diagram": {
-		"prefix": "puml>sequence>new",
+	// ### Sequence Diagram
+	// prefix: "puml>sequence>{something}"
+	// #### Objects
+	"Make any kind of participant": {
+		"prefix": "puml>sequence>object",
 		"body": [
-			"participant ${1:participant1}",
-			"participant ${2:participant2}",
-			"",
-			"$1 -> $2: ${3:requset}",
-			"$2 --> $1: ${4:response}",
+			"${1:participant} ${2:reference_name} as ${3:\"alias_name\"}",
+			"${0}"
+		],
+		"description": "for ${1}, participant, actor, boundary, control, entity, database, collections or queue"
+	},
+	// #### Relations
+	"Make a request": {
+		"prefix": "puml>seqence>req",
+		"body": [
+			"${1:client} -> ${2:server}: ${3:requset}",
+			"${0}"
 		],
 		"description": ""
 	},
-	// ** Collaboration Diagram
-	// ** State Diagram
-
-
+	"Make a response": {
+		"prefix": "puml>seqence>res",
+		"body": [
+			"${1:client} <<- ${2:server}: ${3:response}",
+			"${0}"
+		],
+		"description": ""
+	},
+	
 	
 }
 

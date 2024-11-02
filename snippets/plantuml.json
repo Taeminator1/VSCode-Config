@@ -212,7 +212,7 @@
 		],
 		"description": "Set under the relation"
 	},
-	// #### Relations
+	// #### Request and Response
 	"Make a request": {
 		"prefix": "puml>seqence>req",
 		"body": [
@@ -223,7 +223,14 @@
 	"Make a response": {
 		"prefix": "puml>seqence>res",
 		"body": [
-			"${1:client} <<- ${2:server}: ${3:response}",
+			"${1:client} <-- ${2:server}: ${3:response}",
+			"${0}"
+		]
+	},
+	"Make a asynchrony": {
+		"prefix": "puml>seqence>async",
+		"body": [
+			"${1:client} ->> ${2:server}: ${3:response}",
 			"${0}"
 		]
 	},

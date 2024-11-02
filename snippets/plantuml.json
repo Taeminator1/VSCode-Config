@@ -30,6 +30,14 @@
 		],
 		"description": "Make start end end mark for plantUML"
 	},
+	"Set a note on the left or right hand of something": {
+		"prefix": "puml>note",
+		"body": [
+			"note ${1:left} of ${2:name}: ${3:message}",
+			"${0}"
+		],
+		"description": "Choose left or right side note is located"
+	},
 
 	// ### Class Diagram
 	// prefix: "puml>class>{something}"
@@ -70,7 +78,7 @@
 	"Make a class": {
 		"prefix": "puml>class>class",
 		"body": [
-			"class ${1:class_reference_name} as ${2:\"class_alias_name\"} {",
+			"class ${1:reference_name} as ${2:\"alias_name\"} {",
 			"${3:property_name}",
 			"${4:method_name}()",
 			"}",
@@ -147,14 +155,62 @@
 
 	// ### Sequence Diagram
 	// prefix: "puml>sequence>{something}"
-	// #### Objects
-	"Make any kind of participant": {
-		"prefix": "puml>sequence>object",
+	"Set a note over some lifetimes": {
+		"prefix": "puml>sequence>note>over",
+		"body": [
+			"note over ${1:participant_name1}, ${2:participant_name2}: ${3:message}",
+			"${0}"
+		],
+		"description": "Add participants where the note is over"
+	},
+	"Set a note across all lifetimes": {
+		"prefix": "puml>sequence>note>across",
+		"body": [
+			"note across: ${1:message}",
+			"${0}"
+		]
+	},
+	"Set a divider": {
+		"prefix": "puml>sequence>note>across",
+		"body": [
+			"==${1:message}==",
+			"${0}"
+		],
+		"description": "Divider message is optional"
+	},
+	"Activate": {
+		"prefix": "puml>seqence>attr>activate",
+		"body": [
+			"activate ${1:participant_name}",
+			"${0}",
+			"deactivate"
+		]
+	},
+	// #### Participants
+	"Make any kind of Participant": {
+		"prefix": "puml>sequence>parti",
 		"body": [
 			"${1:participant} ${2:reference_name} as ${3:\"alias_name\"}",
 			"${0}"
 		],
 		"description": "for ${1}, participant, actor, boundary, control, entity, database, collections or queue"
+	},
+	"Create any kind of participant from another": {
+		"prefix": "puml>sequence>create",
+		"body": [
+			"create ${1:participant} ${2:reference_name} as ${3:\"alias_name\"}",
+			"${4:caller} -> ${2}",
+			"${0}"
+		],
+		"description": "for ${1}, participant, actor, boundary, control, entity, database, collections or queue"
+	},
+	"Destroy any kind of participant from another": {
+		"prefix": "puml>sequence>destroy",
+		"body": [
+			"destroy ${1:participant_name}",
+			"${0}"
+		],
+		"description": "Set under the relation"
 	},
 	// #### Relations
 	"Make a request": {
@@ -162,17 +218,16 @@
 		"body": [
 			"${1:client} -> ${2:server}: ${3:requset}",
 			"${0}"
-		],
-		"description": ""
+		]
 	},
 	"Make a response": {
 		"prefix": "puml>seqence>res",
 		"body": [
 			"${1:client} <<- ${2:server}: ${3:response}",
 			"${0}"
-		],
-		"description": ""
+		]
 	},
+	
 	
 	
 }

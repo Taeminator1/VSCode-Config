@@ -74,6 +74,14 @@
 			"${0}"
 		]
 	},
+	"Set style of arrows": {
+		"prefix": "puml>class>attr>line",
+		"body": [
+			"skinparam linetype ${1:ortho}",
+			"${0}"
+		],
+		"description": "for ${1}, polyline, ortho"
+	},
 	// #### Types
 	"Make a class": {
 		"prefix": "puml>class>class",

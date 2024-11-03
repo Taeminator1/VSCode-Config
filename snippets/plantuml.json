@@ -189,7 +189,8 @@
 	"Activate": {
 		"prefix": "puml>seqence>attr>activate",
 		"body": [
-			"activate ${1:participant_name}",
+			"${1:sequence}",
+			"activate ${2:participant_name}",
 			"${0}",
 			"deactivate"
 		]
@@ -220,18 +221,12 @@
 		],
 		"description": "Set under the relation"
 	},
-	// #### Request and Response
+	// #### Sequences
 	"Make a request": {
 		"prefix": "puml>seqence>req",
 		"body": [
-			"${1:client} -> ${2:server}: ${3:requset}",
-			"${0}"
-		]
-	},
-	"Make a response": {
-		"prefix": "puml>seqence>res",
-		"body": [
-			"${1:client} <-- ${2:server}: ${3:response}",
+			"${1:client} -> ${2:server}: ${3:message}",
+			"return ${4: message}",
 			"${0}"
 		]
 	},
@@ -242,7 +237,28 @@
 			"${0}"
 		]
 	},
-	
+	"Group some sequences": {
+		"prefix": "puml>sequence>group",
+		"body": [
+			"${1:group} ${2:message}",
+			"${3:sequence1}",
+			"${4:sequence2}",
+			"end",
+			"${0}"
+		],
+		"description": "for ${1}, opt, loop, par, break, critical or group"
+	},
+	"Group some sequences with alternation": {
+		"prefix": "puml>sequence>group>alt",
+		"body": [
+			"alt ${1:message}",
+			"${2:sequence1}",
+			"else",
+			"${3:sequence2}",
+			"end",
+			"${0}"
+		]
+	},
 	
 	
 }

@@ -195,6 +195,14 @@
 			"deactivate"
 		]
 	},
+	"Hide something": {
+		"prefix": "puml>seqence>attr>hide",
+		"body": [
+			"hide ${1:footbox}",
+			"${0}"
+		],
+		"description": "for ${1}, footbox or unlinked"
+	},
 	// #### Participants
 	"Make any kind of Participant": {
 		"prefix": "puml>sequence>parti",

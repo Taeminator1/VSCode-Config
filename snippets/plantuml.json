@@ -186,6 +186,13 @@
 		],
 		"description": "Divider message is optional"
 	},
+	"Space": {
+		"prefix": "puml>sequence>space",
+		"body": [
+			"|||",
+			"${0}"
+		]
+	},
 	"Activate": {
 		"prefix": "puml>seqence>attr>activate",
 		"body": [

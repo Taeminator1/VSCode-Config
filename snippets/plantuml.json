@@ -189,10 +189,9 @@
 	"Activate": {
 		"prefix": "puml>seqence>attr>activate",
 		"body": [
-			"${1:sequence}",
-			"activate ${2:participant_name}",
+			"activate ${1:participant_name}",
 			"${0}",
-			"deactivate"
+			"deactivate ${1:participant_name}"
 		]
 	},
 	"Hide something": {

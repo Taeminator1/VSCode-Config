@@ -1,6 +1,8 @@
 {
-    "files.autoSave": "afterDelay",
+    "files.autoSave": "onFocusChange",
     "window.autoDetectColorScheme": true,
     "plantuml.previewAutoUpdate": true,
-    "plantuml.exportFormat": "png"
+    "plantuml.exportFormat": "png",
+    "keyboard.dispatch": "keyCode"
+    "editor.wordWrap": "on",
 }
